@@ -1,6 +1,23 @@
+<div class="row">
+	<div class="col-md-4 menu">
 
+	</div>
+	<div class="col-md-8">
+		<%= render 'status_updates/form' %>
+		<hr>
+		<% @status_updates.each do |status_update| %>
+			<div class="panel">
+				<p><%= status_update.user.user_profile.name %></p>
+				<p><%= status_update.status_update %></p>
+				<p>Posted on: <%= status_update.created_at.strftime("%d %b %y") %></p>
+			</div>
+		<% end %>
+
+	</div>
+</div>
 <div class="jumbotron">
 <h1><i class="fa fa-group"></i> The Startup Community</h1>
+
 
 <p class="lead">Join now to connect with like-minded tech entrepreneurs and grow your startup's brand.</p>
 
